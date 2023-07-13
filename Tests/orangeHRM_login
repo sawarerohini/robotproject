@@ -1,0 +1,29 @@
+*** settings    ***
+Library selenium    Library
+
+*** Test Cases  ***
+LoginTest
+    [Documentation]these is the example of Login page
+    [Tags]  Functional
+
+    Open    Browser https://opensource-demo.orangehrmlive.com/web/index.php/auth/login  chrome
+    Maximize Browser Window
+    Page Should contain Login   Page***Settings***
+Library   SeleniumLibrary
+    ***Test Cases***
+    [Documentation]these is example of login page
+    [Tags]Functional
+
+*** keywords    ***
+Setup Testcase
+    Open Browser https://opensource-demo.orangehrmlive.com/web/index.php/auth/login  chrome
+    Maximize Browser Window
+    Page Should contain Login Page
+
+Perform Login
+    Input Test name:Username Admin
+    Input Password name:Password Admin
+    sleep   5
+
+Teardown TestCase
+    Close Browser
